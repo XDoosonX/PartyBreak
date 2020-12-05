@@ -26,7 +26,7 @@
 })();
 (function () {
   var player;
-  var turndownAt = 20;
+  var turndownAt = 30;
   var numTurntAnimations = 10;
   var turntDown = false;
   var maxNodes = 1000;
