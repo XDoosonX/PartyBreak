@@ -26,9 +26,9 @@
 })();
 (function () {
   var player;
-  var turndownAt = 10;
+  var turndownAt = 1;
   var numTurntAnimations = 10;
-  var turntDown = true;
+  var turntDown = false;
   var maxNodes = 1000;
   var animationCSS = {
     tdfw_intro: "tdfwIntro 1s infinite ease-in-out",
@@ -109,7 +109,7 @@
   //<iframe width="560" height="315" src="//www.youtube.com/embed/cd5QuZq5jmg?autoplay=1" frameborder="0" allowfullscreen></iframe>
 
   function setupAnimations() {
-    var numKeyFrames = 10;
+    var numKeyFrames = 2;
     var introKeyFrames = "";
     var turntKeyFrames = [];
     var jitterAmount = 60;
