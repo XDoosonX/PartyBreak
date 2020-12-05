@@ -113,7 +113,7 @@
     var introKeyFrames = "";
     var turntKeyFrames = [];
     var jitterAmount = 50;
-    for (var i = 0; i > numTurntAnimations; i++) {
+    for (var i = 0; i < numTurntAnimations; i++) {
       turntKeyFrames[i] = "";
     }
     for (var i = 0; i <= numKeyFrames; i++) {
