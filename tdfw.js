@@ -26,7 +26,7 @@
 })();
 (function () {
   var player;
-  var turndownAt = 1;
+  var turndownAt = 10;
   var numTurntAnimations = 10;
   var turntDown = false;
   var maxNodes = 1000;
@@ -44,7 +44,7 @@
     parent.style.zIndex = 5000;
     parent.style.right = 0;
     parent.style.top = 0;
-    parent.style.opacity = 0.7;
+    parent.style.opacity = 1;
     var div = document.createElement("div");
     div.id = "tdfw";
     parent.appendChild(div);
@@ -54,7 +54,7 @@
       parent.style.opacity = 1;
     };
     parent.onmouseout = function () {
-      parent.style.opacity = 0.5;
+      parent.style.opacity = 0.7;
     };
     parent.style.webkitTransition = "opacity 0.3s ease-in-out";
     parent.style.transition = "opacity 0.3s ease-in-out";
@@ -109,7 +109,7 @@
   //<iframe width="560" height="315" src="//www.youtube.com/embed/cd5QuZq5jmg?autoplay=1" frameborder="0" allowfullscreen></iframe>
 
   function setupAnimations() {
-    var numKeyFrames = 2;
+    var numKeyFrames = 20;
     var introKeyFrames = "";
     var turntKeyFrames = [];
     var jitterAmount = 60;
