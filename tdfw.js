@@ -11,7 +11,7 @@
   if (!window.requestAnimationFrame)
     window.requestAnimationFrame = function (callback, element) {
       var currTime = new Date().getTime();
-      var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+      var timeToCall = Math.max(0, 5 - (currTime - lastTime));
       var id = window.setTimeout(function () {
         callback(currTime + timeToCall);
       }, timeToCall);
@@ -26,8 +26,8 @@
 })();
 (function () {
   var player;
-  var turndownAt = 6;
-  var numTurntAnimations = 10;
+  var turndownAt = 10;
+  var numTurntAnimations = 60;
   var turntDown = false;
   var maxNodes = 1000;
   var animationCSS = {
@@ -41,9 +41,9 @@
   function embedVideo() {
     var parent = document.createElement("div");
     parent.style.position = "fixed";
-    parent.style.zIndex = 5000;
-    parent.style.right = 0;
-    parent.style.top = 0;
+    parent.style.zIndex = 4000;
+    parent.style.right = 50;
+    parent.style.top = 50;
     parent.style.opacity = 0.7;
     var div = document.createElement("div");
     div.id = "tdfw";
@@ -54,7 +54,7 @@
       parent.style.opacity = 1;
     };
     parent.onmouseout = function () {
-      parent.style.opacity = 0.5;
+      parent.style.opacity = 0.7;
     };
     parent.style.webkitTransition = "opacity 0.3s ease-in-out";
     parent.style.transition = "opacity 0.3s ease-in-out";
@@ -67,8 +67,8 @@
     //    after the API code downloads.
     function onYouTubeIframeAPIReady() {
       player = new YT.Player("tdfw", {
-        height: "200",
-        width: "305",
+        height: "800",
+        width: "600",
         videoId: "cd5QuZq5jmg",
         events: {
           onReady: onPlayerReady,
@@ -109,10 +109,10 @@
   //<iframe width="560" height="315" src="//www.youtube.com/embed/cd5QuZq5jmg?autoplay=1" frameborder="0" allowfullscreen></iframe>
 
   function setupAnimations() {
-    var numKeyFrames = 10;
+    var numKeyFrames = 60;
     var introKeyFrames = "";
     var turntKeyFrames = [];
-    var jitterAmount = 60;
+    var jitterAmount = 40;
     for (var i = 0; i < numTurntAnimations; i++) {
       turntKeyFrames[i] = "";
     }
@@ -206,7 +206,7 @@
       node.classList.add(curClass);
       var delay = Math.round(Math.random() * 1000) / 1000 + "ms";
       if (firstAddition) {
-        delay = ~~(Math.random() * 10) + "s";
+        delay = ~~(Math.random() * 30) + "s";
       }
       var css = animationCSS[curClass];
       if (typeof css === "function") {
