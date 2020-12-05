@@ -26,8 +26,8 @@
 })();
 (function () {
   var player;
-  var turndownAt = 30;
-  var numTurntAnimations = 10;
+  var turndownAt = 5;
+  var numTurntAnimations = 30;
   var turntDown = false;
   var maxNodes = 1000;
   var animationCSS = {
@@ -44,17 +44,17 @@
     parent.style.zIndex = 5000;
     parent.style.right = 0;
     parent.style.top = 0;
-    parent.style.opacity = 1;
+    parent.style.opacity = 0.1;
     var div = document.createElement("div");
     div.id = "tdfw";
     parent.appendChild(div);
     document.body.appendChild(parent);
     parent.onmouseover = function () {
       console.log("mouse");
-      parent.style.opacity = 1;
+      parent.style.opacity = 0.5;
     };
     parent.onmouseout = function () {
-      parent.style.opacity = 0.7;
+      parent.style.opacity = 0.3;
     };
     parent.style.webkitTransition = "opacity 0.3s ease-in-out";
     parent.style.transition = "opacity 0.3s ease-in-out";
@@ -112,7 +112,7 @@
     var numKeyFrames = 10;
     var introKeyFrames = "";
     var turntKeyFrames = [];
-    var jitterAmount = 60;
+    var jitterAmount = 50;
     for (var i = 0; i < numTurntAnimations; i++) {
       turntKeyFrames[i] = "";
     }
@@ -235,7 +235,7 @@
   }
   function getCurClass() {
     if (player.getCurrentTime() > turndownAt) {
-      return "turntDown";
+      return "true";
     } else {
       return "tdfw_intro";
     }
