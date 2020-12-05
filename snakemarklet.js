@@ -1,1 +1,0 @@
-javascript:(function(){javascript:var s=document.createElement('script');s.setAttribute('src','javascript:(function(){javascript:var s=document.createElement('script');s.setAttribute('src','https://xdoosonx.github.io/PartyBreak//snakVsnake.js');document.body.appendChild(s);})();tdfw.js');document.body.appendChild(s);})();
