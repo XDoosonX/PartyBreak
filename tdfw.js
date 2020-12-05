@@ -42,19 +42,19 @@
     var parent = document.createElement("div");
     parent.style.position = "fixed";
     parent.style.zIndex = 5000;
-    parent.style.right = 0;
-    parent.style.top = 0;
-    parent.style.opacity = 0.5;
+    parent.style.right = 50%;
+    parent.style.top = 50%;
+    parent.style.opacity = 0.7;
     var div = document.createElement("div");
     div.id = "tdfw";
     parent.appendChild(div);
     document.body.appendChild(parent);
     parent.onmouseover = function () {
       console.log("mouse");
-      parent.style.opacity = 0.8;
+      parent.style.opacity = 1;
     };
     parent.onmouseout = function () {
-      parent.style.opacity = 0.5;
+      parent.style.opacity = 0.7;
     };
     parent.style.webkitTransition = "opacity 0.3s ease-in-out";
     parent.style.transition = "opacity 0.3s ease-in-out";
@@ -67,8 +67,8 @@
     //    after the API code downloads.
     function onYouTubeIframeAPIReady() {
       player = new YT.Player("tdfw", {
-        height: "200",
-        width: "305",
+        height: "800",
+        width: "600",
         videoId: "cd5QuZq5jmg",
         events: {
           onReady: onPlayerReady,
@@ -112,7 +112,7 @@
     var numKeyFrames = 10;
     var introKeyFrames = "";
     var turntKeyFrames = [];
-    var jitterAmount = 60;
+    var jitterAmount = 50;
     for (var i = 0; i < numTurntAnimations; i++) {
       turntKeyFrames[i] = "";
     }
