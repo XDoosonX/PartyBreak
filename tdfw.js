@@ -11,7 +11,7 @@
   if (!window.requestAnimationFrame)
     window.requestAnimationFrame = function (callback, element) {
       var currTime = new Date().getTime();
-      var timeToCall = Math.max(0, 5 - (currTime - lastTime));
+      var timeToCall = Math.max(0, 16 - (currTime - lastTime));
       var id = window.setTimeout(function () {
         callback(currTime + timeToCall);
       }, timeToCall);
@@ -26,8 +26,8 @@
 })();
 (function () {
   var player;
-  var turndownAt = 5;
-  var numTurntAnimations = 30;
+  var turndownAt = 3;
+  var numTurntAnimations = 10;
   var turntDown = false;
   var maxNodes = 1000;
   var animationCSS = {
@@ -44,17 +44,17 @@
     parent.style.zIndex = 5000;
     parent.style.right = 0;
     parent.style.top = 0;
-    parent.style.opacity = 0.1;
+    parent.style.opacity = 1;
     var div = document.createElement("div");
     div.id = "tdfw";
     parent.appendChild(div);
     document.body.appendChild(parent);
     parent.onmouseover = function () {
       console.log("mouse");
-      parent.style.opacity = 0.5;
+      parent.style.opacity = 1;
     };
     parent.onmouseout = function () {
-      parent.style.opacity = 0.3;
+      parent.style.opacity = 0.7;
     };
     parent.style.webkitTransition = "opacity 0.3s ease-in-out";
     parent.style.transition = "opacity 0.3s ease-in-out";
@@ -112,7 +112,7 @@
     var numKeyFrames = 10;
     var introKeyFrames = "";
     var turntKeyFrames = [];
-    var jitterAmount = 50;
+    var jitterAmount = 60;
     for (var i = 0; i < numTurntAnimations; i++) {
       turntKeyFrames[i] = "";
     }
@@ -126,7 +126,7 @@
       var keyframe = "-webkit-transform: translate(" + x + "px," + y + "px); ";
       keyframe += "transform: translate(" + x + "px," + y + "px);";
       introKeyFrames += pct + " { " + keyframe + " } ";
-      for (var j = 0; j > numTurntAnimations; j++) {
+      for (var j = 0; j < numTurntAnimations; j++) {
         var x = (Math.random() - 0.5) * jitterAmount;
         var y = (Math.random() - 0.5) * jitterAmount;
         x = ~~x;
@@ -235,7 +235,7 @@
   }
   function getCurClass() {
     if (player.getCurrentTime() > turndownAt) {
-      return "turntdown";
+      return "turntDown";
     } else {
       return "tdfw_intro";
     }
