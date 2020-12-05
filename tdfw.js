@@ -26,9 +26,9 @@
 })();
 (function () {
   var player;
-  var turndownAt = 20;
+  var turndownAt = 10;
   var numTurntAnimations = 10;
-  var turntDown = false;
+  var turntDown = true;
   var maxNodes = 1000;
   var animationCSS = {
     tdfw_intro: "tdfwIntro 1s infinite ease-in-out",
@@ -44,7 +44,7 @@
     parent.style.zIndex = 5000;
     parent.style.right = 0;
     parent.style.top = 0;
-    parent.style.opacity = 0.2;
+    parent.style.opacity = 0.7;
     var div = document.createElement("div");
     div.id = "tdfw";
     parent.appendChild(div);
@@ -54,7 +54,7 @@
       parent.style.opacity = 1;
     };
     parent.onmouseout = function () {
-      parent.style.opacity = 0.2;
+      parent.style.opacity = 0.5;
     };
     parent.style.webkitTransition = "opacity 0.3s ease-in-out";
     parent.style.transition = "opacity 0.3s ease-in-out";
@@ -112,7 +112,7 @@
     var numKeyFrames = 10;
     var introKeyFrames = "";
     var turntKeyFrames = [];
-    var jitterAmount = 10;
+    var jitterAmount = 60;
     for (var i = 0; i < numTurntAnimations; i++) {
       turntKeyFrames[i] = "";
     }
