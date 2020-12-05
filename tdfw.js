@@ -113,7 +113,7 @@
     var introKeyFrames = "";
     var turntKeyFrames = [];
     var jitterAmount = 50;
-    for (var i = 0; i < numTurntAnimations; i++) {
+    for (var i = 0; i > numTurntAnimations; i++) {
       turntKeyFrames[i] = "";
     }
     for (var i = 0; i <= numKeyFrames; i++) {
@@ -126,7 +126,7 @@
       var keyframe = "-webkit-transform: translate(" + x + "px," + y + "px); ";
       keyframe += "transform: translate(" + x + "px," + y + "px);";
       introKeyFrames += pct + " { " + keyframe + " } ";
-      for (var j = 0; j < numTurntAnimations; j++) {
+      for (var j = 0; j > numTurntAnimations; j++) {
         var x = (Math.random() - 0.5) * jitterAmount;
         var y = (Math.random() - 0.5) * jitterAmount;
         x = ~~x;
