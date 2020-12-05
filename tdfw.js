@@ -26,7 +26,7 @@
 })();
 (function () {
   var player;
-  var turndownAt = 4;
+  var turndownAt = 6;
   var numTurntAnimations = 10;
   var turntDown = false;
   var maxNodes = 1000;
@@ -42,8 +42,8 @@
     var parent = document.createElement("div");
     parent.style.position = "fixed";
     parent.style.zIndex = 5000;
-    parent.style.right = 50%;
-    parent.style.top = 50%;
+    parent.style.right = 0;
+    parent.style.top = 0;
     parent.style.opacity = 0.7;
     var div = document.createElement("div");
     div.id = "tdfw";
@@ -54,7 +54,7 @@
       parent.style.opacity = 1;
     };
     parent.onmouseout = function () {
-      parent.style.opacity = 0.7;
+      parent.style.opacity = 0.5;
     };
     parent.style.webkitTransition = "opacity 0.3s ease-in-out";
     parent.style.transition = "opacity 0.3s ease-in-out";
@@ -67,8 +67,8 @@
     //    after the API code downloads.
     function onYouTubeIframeAPIReady() {
       player = new YT.Player("tdfw", {
-        height: "800",
-        width: "600",
+        height: "200",
+        width: "305",
         videoId: "cd5QuZq5jmg",
         events: {
           onReady: onPlayerReady,
@@ -112,7 +112,7 @@
     var numKeyFrames = 10;
     var introKeyFrames = "";
     var turntKeyFrames = [];
-    var jitterAmount = 50;
+    var jitterAmount = 60;
     for (var i = 0; i < numTurntAnimations; i++) {
       turntKeyFrames[i] = "";
     }
