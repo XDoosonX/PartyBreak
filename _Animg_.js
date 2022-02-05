@@ -1,3 +1,17 @@
+// This was made by Dawson Smith so
+// anyone can tun a website into a
+// collection of random anime gifs 
+// and pictures! This is mainly 
+// to reduce the size of the bookmark
+// that embeds this in the page.
+// The links get long and some are 
+// broken or just dont work. Will
+// eventually have a MULTITUDE OF
+// ANIME MEDIA HERE!!!!!!!!!!!!!!
+//
+//
+// I DO NOT OWN ANY OF THE IMAGES USED IN THIS SCRIPT
+
 var Cnt=0;
 var slect; 
 var imgs = Array(
